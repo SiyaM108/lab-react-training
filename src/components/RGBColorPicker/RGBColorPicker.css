@@ -1,0 +1,19 @@
+.SingleColorPicker {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.SingleColorPicker .preview {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border: 1px solid #000;
+}
+
+.color-preview {
+  width: 100px;
+  height: 100px;
+  margin-top: 15px;
+  border: 1px solid #000;
+}

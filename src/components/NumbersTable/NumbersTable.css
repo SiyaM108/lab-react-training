@@ -1,0 +1,10 @@
+.NumbersTable {
+  display: grid;
+  grid-template-columns: repeat(6, 80px);
+}
+
+.cell {
+  border: 1px solid black;
+  padding: 20px;
+  text-align: center;
+}
