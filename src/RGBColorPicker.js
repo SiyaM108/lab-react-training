@@ -1,29 +1,24 @@
-function SingleColorPicker({ color, value, onChange }) {
-  const label = { r: 'Red', g: 'Green', b: 'Blue' }[color];
+import { useState } from "react";
+import SingleColorPicker from "./SingleColorPicker";
+
+function RGBColorPicker() {
+  const [rValue, setR] = useState(0);
+  const [gValue, setG] = useState(0);
+  const [bValue, setB] = useState(0);
+
+  const rgb = `rgb(${rValue},${gValue},${bValue})`;
 
   return (
     <div>
+      <SingleColorPicker color="r" value={rValue} onChange={setR} />
+      <SingleColorPicker color="g" value={gValue} onChange={setG} />
+      <SingleColorPicker color="b" value={bValue} onChange={setB} />
+
       <div
-        style={{
-          backgroundColor: `rgb(${color === 'r' ? value : 0},
-                                ${color === 'g' ? value : 0},
-                                ${color === 'b' ? value : 0})`,
-          width: 50,
-          height: 50,
-        }}
+        style={{ backgroundColor: rgb, width: 100, height: 100, marginTop: 20 }}
       ></div>
-
-      <input
-        type="number"
-        min="0"
-        max="255"
-        value={value}
-        onChange={(e) => onChange(Number(e.target.value))}
-      />
-
-      <span>{label}</span>
     </div>
   );
 }
 
-export default SingleColorPicker;
+export default RGBColorPicker;
