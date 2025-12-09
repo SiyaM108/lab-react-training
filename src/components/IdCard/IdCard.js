@@ -1,8 +1,11 @@
+import './IdCard.css';
+
 function IdCard({ lastName, firstName, gender, height, birth, picture }) {
   return (
-    <div className="id-card">
+    <div className="IdCard">
       <img src={picture} alt={firstName} />
-      <div>
+
+      <div className="IdCard-info">
         <p><strong>Last name:</strong> {lastName}</p>
         <p><strong>First name:</strong> {firstName}</p>
         <p><strong>Gender:</strong> {gender}</p>

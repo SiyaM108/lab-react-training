@@ -1,5 +1,7 @@
+import './Greetings.css';
+
 function Greetings({ lang, children }) {
-  const messages = {
+  const text = {
     de: "Hallo",
     en: "Hello",
     es: "Hola",
@@ -7,8 +9,8 @@ function Greetings({ lang, children }) {
   };
 
   return (
-    <div className="greetings">
-      {messages[lang]} {children}
+    <div className="Greetings">
+      {text[lang]} {children}
     </div>
   );
 }

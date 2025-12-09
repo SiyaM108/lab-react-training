@@ -1,4 +1,5 @@
-import { useState } from "react";
+import './ClickablePicture.css';
+import { useState } from 'react';
 
 function ClickablePicture({ img, imgClicked }) {
   const [clicked, setClicked] = useState(false);
@@ -6,9 +7,9 @@ function ClickablePicture({ img, imgClicked }) {
   return (
     <img
       src={clicked ? imgClicked : img}
-      alt="clickable"
       onClick={() => setClicked(!clicked)}
-      style={{ cursor: "pointer" }}
+      className="ClickablePicture"
+      alt="toggle"
     />
   );
 }

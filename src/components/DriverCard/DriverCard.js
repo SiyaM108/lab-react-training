@@ -1,8 +1,9 @@
-import Rating from "./Rating";
+import './DriverCard.css';
+import Rating from '../Rating/Rating';
 
 function DriverCard({ name, rating, img, car }) {
   return (
-    <div className="driver-card">
+    <div className="DriverCard">
       <img src={img} alt={name} />
       <div>
         <h2>{name}</h2>

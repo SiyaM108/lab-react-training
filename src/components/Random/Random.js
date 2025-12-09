@@ -1,10 +1,12 @@
+import './Random.css';
+
 function Random({ min, max }) {
-  const rand = Math.floor(Math.random() * (max - min + 1)) + min;
+  const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
 
   return (
-    <p>
-      Random value between {min} and {max} =&gt; {rand}
-    </p>
+    <div className="Random">
+      Random value between {min} and {max} =&gt; {randomNum}
+    </div>
   );
 }
 

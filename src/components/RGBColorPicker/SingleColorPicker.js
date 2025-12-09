@@ -1,18 +1,19 @@
+import './RGBColorPicker.css';
+
 function SingleColorPicker({ color, value, onChange }) {
-  const label = { r: 'Red', g: 'Green', b: 'Blue' }[color];
+  const label = { r: "Red", g: "Green", b: "Blue" }[color];
+
+  const previewColor = {
+    backgroundColor: `rgb(${color === 'r' ? value : 0},
+                          ${color === 'g' ? value : 0},
+                          ${color === 'b' ? value : 0})`
+  };
 
   return (
-    <div>
-      <div
-        style={{
-          backgroundColor: `rgb(${color === 'r' ? value : 0},
-                                ${color === 'g' ? value : 0},
-                                ${color === 'b' ? value : 0})`,
-          width: 50,
-          height: 50,
-        }}
-      ></div>
+    <div className="SingleColorPicker">
+      <div className="preview" style={previewColor}></div>
 
+      <label>{label}</label>
       <input
         type="number"
         min="0"
@@ -20,8 +21,6 @@ function SingleColorPicker({ color, value, onChange }) {
         value={value}
         onChange={(e) => onChange(Number(e.target.value))}
       />
-
-      <span>{label}</span>
     </div>
   );
 }
