@@ -1,15 +1,17 @@
-import './LikeButton.css';
-import { useState } from 'react';
+import { useState } from "react";
+import "./LikeButton.css";
 
-const colors = ['purple', 'blue', 'green', 'yellow', 'orange', 'red'];
+const colors = ["purple", "blue", "green", "yellow", "orange", "red"];
 
 function LikeButton() {
   const [count, setCount] = useState(0);
 
+  const color = colors[count % colors.length];
+
   return (
     <button
-      className="LikeButton"
-      style={{ backgroundColor: colors[count % colors.length] }}
+      className="like-button"
+      style={{ backgroundColor: color }}
       onClick={() => setCount(count + 1)}
     >
       {count} Likes

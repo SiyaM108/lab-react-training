@@ -1,4 +1,4 @@
-import './CreditCard.css';
+import "./CreditCard.css";
 
 function CreditCard({
   type,
@@ -10,14 +10,20 @@ function CreditCard({
   bgColor,
   color,
 }) {
-  const last4 = number.slice(-4);
+  const cardTypeImg =
+    type === "Visa"
+      ? "/assets/images/visa.png"
+      : "/assets/images/master-card.svg";
+
+  const maskedNumber = "•••• •••• •••• " + number.slice(-4);
 
   return (
-    <div className="CreditCard" style={{ backgroundColor: bgColor, color }}>
-      <div className="type">{type}</div>
-      <div className="number">•••• •••• •••• {last4}</div>
+    <div className="credit-card" style={{ backgroundColor: bgColor, color }}>
+      <img className="card-logo" src={cardTypeImg} alt={type} />
 
-      <div className="details">
+      <div className="card-number">{maskedNumber}</div>
+
+      <div className="exp-bank">
         <span>
           Expires {String(expirationMonth).padStart(2, "0")}/
           {String(expirationYear).slice(-2)}

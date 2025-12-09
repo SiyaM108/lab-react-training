@@ -1,10 +1,10 @@
-import './Rating.css';
+import "./Rating.css";
 
 function Rating({ children }) {
-  const rounded = Math.round(children);
-  const stars = "★".repeat(rounded) + "☆".repeat(5 - rounded);
+  const value = Math.round(Number(children));
+  const stars = "★★★★★☆☆☆☆☆".slice(5 - value, 10 - value);
 
-  return <div className="Rating">{stars}</div>;
+  return <div className="rating">{stars}</div>;
 }
 
 export default Rating;

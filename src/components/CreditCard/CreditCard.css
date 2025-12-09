@@ -1,22 +1,23 @@
-.CreditCard {
-  width: 280px;
-  padding: 20px;
+.credit-card {
+  width: 300px;
   border-radius: 10px;
-  margin: 15px 0;
-  font-size: 1.1rem;
+  padding: 20px;
+  margin: 12px;
+  display: flex;
+  flex-direction: column;
 }
 
-.type {
-  text-align: right;
-  font-size: 1.4rem;
+.card-logo {
+  width: 60px;
+  align-self: flex-end;
 }
 
-.number {
-  font-size: 1.6rem;
+.card-number {
+  font-size: 1.5rem;
   margin: 20px 0;
 }
 
-.details {
+.exp-bank {
   display: flex;
   justify-content: space-between;
 }

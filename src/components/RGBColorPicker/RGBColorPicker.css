@@ -1,19 +1,15 @@
-.SingleColorPicker {
-  display: flex;
-  align-items: center;
+.rgb-color-picker {
   margin: 10px 0;
 }
 
-.SingleColorPicker .preview {
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
+.combined-color-box {
+  width: 150px;
+  height: 50px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid #000;
-}
-
-.color-preview {
-  width: 100px;
-  height: 100px;
-  margin-top: 15px;
-  border: 1px solid #000;
+  font-weight: bold;
+  color: #000;
 }

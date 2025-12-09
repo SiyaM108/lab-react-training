@@ -1,21 +1,24 @@
-import './RGBColorPicker.css';
-import { useState } from 'react';
-import SingleColorPicker from './SingleColorPicker';
+import { useState } from "react";
+import SingleColorPicker from "../SingleColorPicker/SingleColorPicker";
+import "./RGBColorPicker.css";
 
 function RGBColorPicker() {
-  const [rValue, setRValue] = useState(0);
-  const [gValue, setGValue] = useState(0);
-  const [bValue, setBValue] = useState(0);
-
-  const rgb = `rgb(${rValue}, ${gValue}, ${bValue})`;
+  const [r, setR] = useState(0);
+  const [g, setG] = useState(0);
+  const [b, setB] = useState(0);
 
   return (
-    <div className="RGBColorPicker">
-      <SingleColorPicker color="r" value={rValue} onChange={setRValue} />
-      <SingleColorPicker color="g" value={gValue} onChange={setGValue} />
-      <SingleColorPicker color="b" value={bValue} onChange={setBValue} />
+    <div className="rgb-color-picker">
+      <SingleColorPicker color="r" value={r} onChange={setR} />
+      <SingleColorPicker color="g" value={g} onChange={setG} />
+      <SingleColorPicker color="b" value={b} onChange={setB} />
 
-      <div className="color-preview" style={{ backgroundColor: rgb }}></div>
+      <div
+        className="combined-color-box"
+        style={{ backgroundColor: `rgb(${r},${g},${b})` }}
+      >
+        rgb({r},{g},{b})
+      </div>
     </div>
   );
 }
